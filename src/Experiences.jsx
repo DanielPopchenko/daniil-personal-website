@@ -38,9 +38,11 @@ export default function Experiences() {
                   </div>
 
                   <div className="flex flex-col md:flex-row items-center gap-3 mb-4">
-                    <span className="px-2 py-2 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full  text-[12px] md:text-sm font-semibold text-gray-300 border border-gray-600">
-                      September 2024 - August 2025
-                    </span>
+                    <div className="px-2 py-2 flex items-center justify-center md:justify-start bg-gradient-to-r from-gray-700 to-gray-600 rounded-full  text-[11px] md:text-sm font-semibold text-gray-300 border border-gray-600">
+                      <p className="text-center md:text-left">September 2024</p>
+                      <span className="mx-2">-</span>{' '}
+                      <p className="text-center md:text-left">August 2025</p>
+                    </div>
                     <ul className="grid grid-cols-2 md:flex gap-2 text-center">
                       <li className="px-3 py-1 bg-yellow-600/20 border border-yellow-500/30 rounded-full text-xs text-yellow-300">
                         Full Stack
@@ -70,25 +72,28 @@ export default function Experiences() {
                 </h3>
                 <p className="text-gray-300 text-sm md:text-base leading-relaxed font-normal">
                   Actively participated in the development of a{' '}
-                  <span className="text-emerald-300 font-semibold">
-                    two-sided, fast-paced, health and insurance management system startup
-                  </span>{' '}
-                  for universities, consisting of:
+                  <span className="text-emerald-300 font-semibold">two-sided, fast-paced,</span>{' '}
+                  health insurance <span className="font-semibold">management system startup</span>{' '}
+                  for universities, <span className="font-semibold">consisting of:</span>
                 </p>
                 <ul className="list-disc list-inside text-gray-300 text-sm md:text-base leading-relaxed font-normal mt-2">
                   <li>
-                    <span className="text-emerald-300 font-semibold">
-                      Mobile app for students (iOS/Android),
-                    </span>{' '}
+                    Mobile app for students{' '}
+                    <span className="text-emerald-300 font-semibold">(iOS/Android)</span>,{' '}
                   </li>
                   <li>
+                    <span className="text-emerald-300 font-semibold">Web platform </span>for
+                    university admins,
+                  </li>
+                  <li>
+                    backed by{' '}
                     <span className="text-emerald-300 font-semibold">
-                      Web platform for university admins, backed by Node.js/Express.js services.
+                      Node.js/Express.js API services.
                     </span>
                   </li>
                 </ul>
-                <p className="text-gray-300 text-sm md:text-base leading-relaxed font-normal mt-4">
-                  <span className="text-emerald-300 font-semibold">The system streamlines:</span>
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed mt-4 font-semibold">
+                  The system streamlines:
                 </p>
                 <ul className="list-disc list-inside text-gray-300 text-sm md:text-base leading-relaxed font-normal mt-2">
                   <li>
@@ -108,9 +113,12 @@ export default function Experiences() {
                     <span className="text-emerald-300 font-semibold">
                       student intake reporting.
                     </span>
+                  </li>
+                  <li>
                     This significantly reduces the time and effort universities spend managing
-                    student health records, while providing students with faster approvals,
-                    transparent status tracking, and easier access to university health services.
+                    student health records, while providing students with faster approvals, ability
+                    to manage their health records, transparent status tracking, and easier access
+                    to university health services.
                   </li>
                 </ul>
               </div>
@@ -138,7 +146,7 @@ export default function Experiences() {
                       <li>
                         Boosted{' '}
                         <span className="text-blue-300 font-semibold">
-                          defect detection by ~20%
+                          defect detection by ~50%
                         </span>
                       </li>
                     </ul>
@@ -163,19 +171,20 @@ export default function Experiences() {
                       <li>
                         Built and maintained{' '}
                         <span className="text-green-300 font-semibold">
-                          React Native Storybook UI component library
-                        </span>
+                          React Native Storybook UI
+                        </span>{' '}
+                        component library.
                       </li>
 
                       <li>
                         Automated{' '}
                         <span className="text-green-300 font-semibold">
-                          localization for 800+ strings (AI-powered + i18n)
+                          localization for 800+ strings (AI-powered + i18n).
                         </span>
                       </li>
                       <li>
                         Cut{' '}
-                        <span className="text-green-300 font-semibold">QA/dev effort by ~70%</span>
+                        <span className="text-green-300 font-semibold">QA/dev effort by ~70%.</span>
                       </li>
                       <li>
                         Developed and documented{' '}
@@ -195,7 +204,7 @@ export default function Experiences() {
                   <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
                   Technologies Used
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center items-center md:justify-start">
                   {[
                     'TypeScript',
                     'ReactJS',
@@ -212,13 +221,13 @@ export default function Experiences() {
                     'Jest',
                     'Vitest',
                   ].map((tech, index) => (
-                    <span
+                    <div
                       key={tech}
                       className="px-3 py-1 bg-gray-700/50 border border-gray-600 rounded-lg text-sm text-gray-300 hover:bg-gray-600/50 hover:border-gray-500 transition-all duration-300 transform hover:scale-105"
                       style={{ animationDelay: `${index * 50}ms` }}
                     >
                       {tech}
-                    </span>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -226,9 +235,9 @@ export default function Experiences() {
               <div className="mb-6">
                 <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
                   <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
-                  Tools Used
+                  Tools/Methodologies Used
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   {[
                     'Git',
                     'GitHub',
@@ -238,6 +247,7 @@ export default function Experiences() {
                     'Cursor',
                     'Code Reviews',
                     'Pair Programming',
+                    'Localization (i18n)',
                   ].map((tech, index) => (
                     <span
                       key={tech}
@@ -261,8 +271,8 @@ export default function Experiences() {
 
           {/* 28software Experience */}
           <div className="group relative mb-12">
-            {/* Animated background card */}
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-blue-500/40 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.3)]"></div>
+            {/* Background card */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-yellow-500/40 group-hover:shadow-[0_0_40px_rgba(234,179,8,0.3)]"></div>
 
             {/* Content */}
             <div className="relative p-8 rounded-2xl border border-gray-700 hover:border-gray-500 transition-all duration-300">
@@ -270,21 +280,23 @@ export default function Experiences() {
               <div className="flex items-start justify-between mb-8">
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
+                    <div className="w-12 h-12 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-xl flex items-center justify-center transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
                       <FaBuilding size={30} className="text-white" />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors duration-300">
+                      <h2 className="text-3xl font-bold text-white mb-1 group-hover:text-yellow-300 transition-colors duration-300">
                         28software
                       </h2>
-                      <p className="text-xl text-blue-400 font-semibold">Software Engineer</p>
+                      <p className="text-xl text-yellow-400 font-semibold">Software Engineer</p>
                     </div>
                   </div>
 
-                  <div className="flex flex-col md:flex-row items-center gap-3 mb-4">
-                    <span className="px-2 py-2 bg-gradient-to-r from-gray-700 to-gray-600 rounded-full  text-[11px] md:text-sm font-semibold text-gray-300 border border-gray-600">
-                      November 2023 - September 2024
-                    </span>
+                  <div className="flex flex-col md:flex-row  justify-center md:justify-start items-center gap-3 mb-4">
+                    <div className="px-2 py-2 flex items-center justify-center md:justify-start bg-gradient-to-r from-gray-700 to-gray-600 rounded-full  text-[11px] md:text-sm font-semibold text-gray-300 border border-gray-600">
+                      <p className="text-center md:text-left">November 2023</p>{' '}
+                      <span className="mx-2">-</span>{' '}
+                      <p className="text-center md:text-left">September 2024</p>
+                    </div>
                     <div className="grid grid-cols-2 md:flex gap-2 text-center md:text-left">
                       <span className="px-3 py-1 bg-green-600/20 border border-green-500/30 rounded-full text-xs text-green-300">
                         Mobile
@@ -303,81 +315,92 @@ export default function Experiences() {
                 </div>
               </div>
 
-              {/* Progression */}
-              <div className="mb-8 p-6 bg-gray-800/50 rounded-xl border border-gray-600 hover:border-gray-500 transition-all duration-300">
-                <h3 className="text-base md:text-lg text-center md:text-left font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></span>
-                  Career Progression
-                </h3>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-                  <div className="flex items-center gap-3 p-3 bg-green-600/10 border border-green-500/20 rounded-lg min-w-[200px] justify-center">
-                    <span className="text-green-300 font-semibold text-center">
-                      Internship Program
-                    </span>
-                  </div>
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+                {/* Key Contributions */}
+                <div className="mb-8">
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="">
+                      <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
+                        Key Contributions
+                      </h3>
+                      <div className="p-4 bg-yellow-600/10 border border-yellow-500/20 rounded-lg">
+                        <h4 className="font-semibold text-yellow-300 mb-2">
+                          Technical Improvements
+                        </h4>
+                        <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
+                          <li>
+                            Guided the transition from{' '}
+                            <span className="text-yellow-300 font-semibold">CSS3 to Tailwind</span>
+                          </li>
+                          <li>
+                            Added{' '}
+                            <span className="text-yellow-300 font-semibold">
+                              automated unit tests with Jest
+                            </span>
+                          </li>
+                          <li>
+                            Improved system maintainability by{' '}
+                            <span className="text-yellow-300 font-semibold">
+                              strict typing using TypeScript / adding linting
+                            </span>{' '}
+                            rules.
+                          </li>
+                        </ul>
+                        <h4 className="font-semibold text-yellow-300 mb-2 mt-3">
+                          Development Work
+                        </h4>
+                        <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
+                          <li>
+                            <span className="text-yellow-300 font-semibold">New feature </span>
+                            development
+                          </li>
+                          <li>
+                            <span className="text-yellow-300 font-semibold">
+                              UI component creation
+                            </span>
+                          </li>
+                          <li>
+                            <span className="text-yellow-300 font-semibold">API development</span> &{' '}
+                            <span className="text-yellow-300 font-semibold">bug fixes</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="">
+                      <h3 className="text-base md:text-lg text-center md:text-left font-bold text-white mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 md:w-3 md:h-3 bg-blue-400 rounded-full animate-pulse"></span>
+                        Career Progression
+                      </h3>
+                      <div className="p-6 bg-gray-800/50 rounded-xl border border-gray-600 hover:border-gray-500 transition-all duration-300">
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+                          <div className="flex items-center gap-3 p-3 bg-green-600/10 border border-green-500/20 rounded-lg max-w-[200px] justify-center">
+                            <span className="text-green-300 font-semibold text-center">
+                              Internship Program
+                            </span>
+                          </div>
 
-                  <div className="flex items-center gap-2 text-blue-400">
-                    <div className="w-8 h-0.5 bg-blue-500 rounded-full hidden md:block"></div>
-                    <FaLongArrowAltRight
-                      className="transform text-white rotate-90 md:rotate-0 transition-transform duration-300"
-                      size={20}
-                    />
-                    <div className="w-8 h-0.5 bg-blue-500 rounded-full hidden md:block"></div>
-                  </div>
+                          <div className="flex items-center gap-2 text-blue-400">
+                            <div className="w-8 h-0.5 bg-blue-500 rounded-full hidden md:block"></div>
+                            <FaLongArrowAltRight
+                              className="transform text-white rotate-90 md:rotate-0 transition-transform duration-300"
+                              size={20}
+                            />
+                            <div className="w-8 h-0.5 bg-blue-500 rounded-full hidden md:block"></div>
+                          </div>
 
-                  <div className="flex items-center gap-3 p-3 bg-blue-600/10 border border-blue-500/20 rounded-lg min-w-[200px] justify-center">
-                    <span className="text-blue-300 font-semibold text-center">
-                      Junior Software Engineer
-                    </span>
+                          <div className="flex items-center gap-3 p-3 bg-blue-600/10 border border-blue-500/20 rounded-lg max-w-[200px] justify-center">
+                            <span className="text-blue-300 font-semibold text-center">
+                              Software Engineer
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Key Contributions */}
-              <div className="mb-8">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
-                  Key Contributions
-                </h3>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="p-4 bg-yellow-600/10 border border-yellow-500/20 rounded-lg">
-                    <h4 className="font-semibold text-yellow-300 mb-2">Technical Improvements</h4>
-                    <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
-                      <li>
-                        Guided the transition from{' '}
-                        <span className="text-yellow-300 font-semibold">CSS3 to Tailwind</span>
-                      </li>
-                      <li>
-                        Added{' '}
-                        <span className="text-yellow-300 font-semibold">
-                          automated unit tests with Jest
-                        </span>
-                      </li>
-                      <li>
-                        Improved system maintainability by{' '}
-                        <span className="text-yellow-300 font-semibold">
-                          strict typing using TypeScript / adding linting rules
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="p-4 bg-blue-600/10 border border-blue-500/20 rounded-lg">
-                    <h4 className="font-semibold text-blue-300 mb-2">Development Work</h4>
-                    <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
-                      <li>
-                        <span className="text-blue-300 font-semibold">New feature development</span>
-                      </li>
-                      <li>
-                        <span className="text-blue-300 font-semibold">UI component creation</span>
-                      </li>
-                      <li>
-                        <span className="text-blue-300 font-semibold">
-                          API development & bug fixes
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                {/* Progression */}
               </div>
 
               {/* Tech Stack */}
@@ -386,7 +409,7 @@ export default function Experiences() {
                   <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
                   Technologies Used
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   {[
                     'JavaScript',
                     'TypeScript',

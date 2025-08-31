@@ -11,10 +11,10 @@ export default function AboutMe() {
           <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg opacity-20 blur-sm"></div>
         </h1>
 
-        <div className="max-w-[1400px] mx-auto px-6">
+        <div className="max-w-[1440px] mx-auto px-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* Main Description Card */}
-            <div className="group relative md:col-span-2 lg:col-span-2">
+            <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-purple-600/40"></div>
               <div className="relative p-6 rounded-2xl border border-gray-700 hover:border-gray-500 transition-all duration-300 h-full">
                 <div className="flex items-center gap-3 mb-4">
@@ -39,16 +39,35 @@ export default function AboutMe() {
                     </span>
                     .
                   </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-pink-500/40"></div>
+              <div className="relative p-6 rounded-2xl border border-gray-700 hover:border-gray-500 transition-all duration-300 h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-600 to-pink-500 rounded-xl flex items-center justify-center transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
+                    <RiTeamFill size={30} className="text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-pink-300 transition-colors duration-300">
+                    Off the Clock
+                  </h3>
+                </div>
+                <ul className="text-gray-300 lg:text-lg md:text-base leading-relaxed group-hover:text-white transition-colors duration-300 list-disc list-inside">
+                  <p className="font-semibold">Outside of coding:</p>
                   <li>
-                    Outside of coding,{' '}
-                    <span className="text-blue-300 font-semibold">
+                    {' '}
+                    <span className="text-pink-300 font-semibold">
                       football has always been a big part of my life
                     </span>
                     . Had the chance to play in professional leagues in both Ukraine and Latvia.
-                    Also I'm a <span className="text-blue-300 font-semibold">big food lover</span>,
+                  </li>
+                  <li>
+                    Also I'm a <span className="text-pink-300 font-semibold">big food lover</span>,
                     whether it's cooking something new or enjoying a great meal. And whenever I get
                     the chance,{' '}
-                    <span className="text-blue-300 font-semibold">
+                    <span className="text-pink-300 font-semibold">
                       love walking, exploring new places, and discovering new experiences
                     </span>
                     .
@@ -57,7 +76,7 @@ export default function AboutMe() {
               </div>
             </div>
 
-            <div className="group relative md:col-span-2 lg:col-span-1">
+            <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-orange-500/40"></div>
               <div className="relative p-6 rounded-2xl border border-gray-700 hover:border-gray-500 transition-all duration-300 h-full">
                 <div className="flex items-center gap-3 mb-4">
@@ -96,24 +115,23 @@ export default function AboutMe() {
                 </div>
                 <ul className="text-gray-300 lg:text-lg md:text-base leading-relaxed group-hover:text-white transition-colors duration-300 list-disc list-inside">
                   <li>
-                    Driven by{' '}
-                    <span className="text-green-300 font-semibold">
-                      curiosity and a passion for progress
-                    </span>
-                    , each challenge is seen as an opportunity to learn and grow.
+                    <span className="font-semibold text-green-300">Curiosity</span> drives me
+                    forward, and I see every challenge as a chance to learn and grow.
                   </li>
                   <li>
-                    <span className="text-green-300 font-semibold">
-                      New frameworks, emerging technologies, and complex problems
+                    <span className="font-semibold text-green-300"> I enjoy </span> picking up, new
+                    frameworks, <span className="font-semibold text-green-300"> exploring </span>{' '}
+                    new technologies, and{' '}
+                    <span className="font-semibold text-green-300"> solving </span> complex
+                    problems, as they're opportunities to sharpen my skills and possibility to grow.
+                  </li>
+                  <li>
+                    For me,{' '}
+                    <span className="font-semibold text-green-300">
+                      {' '}
+                      every project is a space to adapt, experiment,
                     </span>{' '}
-                    are welcomed as chances to push boundaries and refine skills.
-                  </li>
-                  <li>
-                    Every project becomes a space to{' '}
-                    <span className="text-green-300 font-semibold">
-                      experiment, adapt, and transform ideas into tangible solutions
-                    </span>
-                    .
+                    and opportunity to turn ideas into real, high-quality solutions.
                   </li>
                 </ul>
               </div>

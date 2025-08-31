@@ -1,5 +1,5 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
-import logo from './assets/personal-logo-nobg.png';
+import logo from './assets/logo-me.png';
 import AboutMe from './AboutMe';
 import Skills from './Skills';
 import Experiences from './Experiences';
@@ -31,7 +31,9 @@ function App() {
     <>
       <div className="bg-gradient-to-r from-black to-gray-900 min-w-screen min-h-screen p-10">
         <div className="flex flex-col md:flex-row gap-4 items-center">
-          <img src={logo} alt="logo" className="w-[175px] h-[175px] rounded-3xl object-cover" />
+          <div className="w-[175px] h-[215px] rounded-3xl object-cover">
+            <img src={logo} alt="logo" className="w-[175px] h-[215px] rounded-3xl object-cover" />
+          </div>
           <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
             <div className="flex flex-col items-center md:items-start gap-4 mr-auto">
               <div className="flex  flex-col md:flex-row items-center md:items-start gap-4">
