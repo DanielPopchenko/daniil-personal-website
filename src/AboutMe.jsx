@@ -85,12 +85,11 @@ export default function AboutMe() {
                     <span className="font-semibold text-green-300">Curiosity</span> drives me
                     forward, and I see every challenge as a chance to learn and grow.
                   </li>
-                  <br />
-                  <p className="font-semibold">I enjoy: </p>
                   <li>
-                    <span className="font-semibold text-green-300"> </span> picking up new
-                    frameworks, <span className="font-semibold text-green-300"> exploring </span>{' '}
-                    new technologies, and{' '}
+                    I enjoy{' '}
+                    <span className="font-semibold text-green-300"> picking up new frameworks</span>
+                    , <span className="font-semibold text-green-300"> exploring </span> new
+                    technologies, and{' '}
                     <span className="font-semibold text-green-300"> solving </span> complex
                     problems, as they're opportunities to sharpen my skills and possibility to grow.
                   </li>
