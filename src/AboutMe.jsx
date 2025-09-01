@@ -88,19 +88,20 @@ export default function AboutMe() {
                   <li>
                     I enjoy{' '}
                     <span className="font-semibold text-green-300"> picking up new frameworks</span>
-                    , <span className="font-semibold text-green-300"> exploring </span> new
-                    technologies, and{' '}
-                    <span className="font-semibold text-green-300"> solving </span> complex
+                    ,{' '}
+                    <span className="font-semibold text-green-300">
+                      {' '}
+                      exploring new technologies
+                    </span>
+                    , and <span className="font-semibold text-green-300"> solving </span> complex
                     problems, as they're opportunities to sharpen my skills and possibility to grow.
                   </li>
                   <li>
-                    Each project is a chance to{' '}
-                    <span className="font-semibold text-green-300">adapt and experiment </span> - an
-                    opportunity to{' '}
+                    Each project is an opportunity to{' '}
                     <span className="font-semibold text-green-300">
-                      turn ideas into high-quality real-world solutions
+                      turn ideas into high-quality
                     </span>
-                    .
+                    , <span className="font-semibold text-green-300">real-world solutions</span>.
                   </li>
                 </ul>
               </div>
@@ -212,13 +213,12 @@ export default function AboutMe() {
                   </h3>
                 </div>
                 <ul className="text-gray-300 lg:text-lg md:text-base leading-relaxed group-hover:text-white transition-colors duration-300 list-disc list-inside">
-                  <p className="font-semibold">Outside of coding:</p>
                   <li>
                     {' '}
                     <span className="text-pink-300 font-semibold">
-                      football has always been a big part of my life
+                      Football has always been a big part of my life
                     </span>
-                    . Had the chance to play in professional leagues in both Ukraine and Latvia.
+                    . Had played in professional leagues in both Ukraine and Latvia.
                   </li>
                   <li>
                     Also I'm a <span className="text-pink-300 font-semibold">big food lover</span>,
