@@ -93,8 +93,12 @@ export default function AboutMe() {
                       {' '}
                       exploring new technologies
                     </span>
-                    , and <span className="font-semibold text-green-300"> solving </span> complex
-                    problems, as they're opportunities to sharpen my skills and possibility to grow.
+                    , and{' '}
+                    <span className="font-semibold text-green-300">
+                      {' '}
+                      solving complex problems
+                    </span>{' '}
+                    , as they're opportunities to sharpen my skills and possibility to grow.
                   </li>
                   <li>
                     Each project is an opportunity to{' '}
