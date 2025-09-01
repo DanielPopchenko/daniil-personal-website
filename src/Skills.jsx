@@ -23,8 +23,8 @@ export default function Skills() {
     <>
       {/* Skills Highlight Section */}
       <div className="mt-16">
-        <h2 className="text-2xl font-bold text-white text-center mb-8 relative">
-          <span className="relative z-10">Technical Skills</span>
+        <h2 className="font-bold text-white text-center text-4xl mb-8 relative">
+          <span className="relative z-10 text-4xl">Technical Skills</span>
           <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg opacity-20 blur-sm"></div>
         </h2>
 

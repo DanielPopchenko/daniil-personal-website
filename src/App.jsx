@@ -31,7 +31,7 @@ function App() {
     <>
       <div className="bg-gradient-to-r from-black to-gray-900 min-w-screen min-h-screen p-10">
         <div className="flex flex-col md:flex-row gap-4 items-center">
-          <div className="w-[175px] h-[215px] rounded-3xl object-cover">
+          <div className="w-[165px] h-[215px] rounded-3xl object-cover">
             <img src={logo} alt="logo" className="w-[175px] h-[215px] rounded-3xl object-cover" />
           </div>
           <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
