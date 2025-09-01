@@ -51,28 +51,6 @@ export default function Skills() {
             </div>
           </div>
 
-          {/* Mobile Skills */}
-          <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-xl border border-green-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-green-400/50"></div>
-            <div className="relative p-4 rounded-xl text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                <FaMobile className="text-white" size={30} />
-              </div>
-              <h3 className="text-white font-bold mb-2 text-lg">Mobile</h3>
-              <div className="flex flex-wrap gap-1 justify-center">
-                {mobileSkills.map((skill, index) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 bg-green-600/30 border border-green-500/50 rounded text-[13px] text-green-200 transform transition-all duration-300 hover:scale-110"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
           {/* Backend Skills */}
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-pink-600/20 rounded-xl border border-red-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-red-400/50"></div>
@@ -86,6 +64,28 @@ export default function Skills() {
                   <span
                     key={skill}
                     className="px-2 py-1 bg-red-600/30 border border-red-500/50 rounded text-[13px] text-red-200 transform transition-all duration-300 hover:scale-110"
+                    style={{ animationDelay: `${index * 100}ms` }}
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Skills */}
+          <div className="group relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-xl border border-green-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-green-400/50"></div>
+            <div className="relative p-4 rounded-xl text-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+                <FaMobile className="text-white" size={30} />
+              </div>
+              <h3 className="text-white font-bold mb-2 text-lg">Mobile</h3>
+              <div className="flex flex-wrap gap-1 justify-center">
+                {mobileSkills.map((skill, index) => (
+                  <span
+                    key={skill}
+                    className="px-2 py-1 bg-green-600/30 border border-green-500/50 rounded text-[13px] text-green-200 transform transition-all duration-300 hover:scale-110"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {skill}
