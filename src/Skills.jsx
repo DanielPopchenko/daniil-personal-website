@@ -1,6 +1,7 @@
 import { MdScreenshotMonitor } from 'react-icons/md';
 import { FaServer, FaTools, FaMobile } from 'react-icons/fa';
 import { IoIosSettings } from 'react-icons/io';
+import SkillItem from './components/SkillItem';
 
 const frontendSkills = [
   'ReactJS',
@@ -22,30 +23,32 @@ export default function Skills() {
   return (
     <>
       {/* Skills Highlight Section */}
-      <div className="mt-16">
-        <h2 className="font-bold text-white text-center text-4xl mb-8 relative">
-          <span className="relative z-10 text-4xl">Technical Skills</span>
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-700 rounded-lg opacity-20 blur-sm"></div>
-        </h2>
+      <div className="mt-20">
+        <div className="mb-16 flex items-center justify-center flex-col">
+          <div className="mx-auto inline-block justify-center items-center bg-gradient-to-r from-gray-200/50 to-gray-300/50 rounded-xl border border-gray-400/30 p-2">
+            <h2 className="text-center text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-700 via-gray-800 to-black bg-clip-text text-transparent relative z-10 transform hover:scale-103 transition-transform duration-300">
+              Skills
+            </h2>
+          </div>
+          <div className="mt-4 flex justify-center">
+            <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full"></div>
+          </div>
+        </div>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5 text-[13px]">
           {/* Frontend Skills */}
           <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-xl border border-blue-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-blue-400/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/50 rounded-xl border border-gray-400/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-gray-500/50"></div>
             <div className="relative p-4 rounded-xl text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+              <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
                 <MdScreenshotMonitor className="text-white" size={30} />
               </div>
-              <h3 className="text-white font-bold mb-2 text-lg">Frontend</h3>
+              <h3 className="text-gray-800 font-bold mb-2 text-lg">Frontend</h3>
               <div className="flex flex-wrap gap-1 justify-center">
                 {frontendSkills.map((skill, index) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 bg-blue-600/30 border border-blue-500/50 rounded text-[13px] text-blue-200 transform transition-all duration-300 hover:scale-110"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
+                  <SkillItem key={skill} tech={skill} index={index}>
                     {skill}
-                  </span>
+                  </SkillItem>
                 ))}
               </div>
             </div>
@@ -53,21 +56,17 @@ export default function Skills() {
 
           {/* Backend Skills */}
           <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-pink-600/20 rounded-xl border border-red-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-red-400/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/50 rounded-xl border border-gray-400/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-gray-500/50"></div>
             <div className="relative p-4 rounded-xl text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-pink-600 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+              <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
                 <FaServer className="text-white" size={28} />
               </div>
-              <h3 className="text-white font-bold mb-2 text-lg">Backend</h3>
+              <h3 className="text-gray-800 font-bold mb-2 text-lg">Backend</h3>
               <div className="flex flex-wrap gap-1 justify-center">
                 {backendSkills.map((skill, index) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 bg-red-600/30 border border-red-500/50 rounded text-[13px] text-red-200 transform transition-all duration-300 hover:scale-110"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
+                  <SkillItem key={skill} tech={skill} index={index}>
                     {skill}
-                  </span>
+                  </SkillItem>
                 ))}
               </div>
             </div>
@@ -75,21 +74,17 @@ export default function Skills() {
 
           {/* Mobile Skills */}
           <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-xl border border-green-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-green-400/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/50 rounded-xl border border-gray-400/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-gray-500/50"></div>
             <div className="relative p-4 rounded-xl text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+              <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
                 <FaMobile className="text-white" size={30} />
               </div>
-              <h3 className="text-white font-bold mb-2 text-lg">Mobile</h3>
+              <h3 className="text-gray-800 font-bold mb-2 text-lg">Mobile</h3>
               <div className="flex flex-wrap gap-1 justify-center">
                 {mobileSkills.map((skill, index) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 bg-green-600/30 border border-green-500/50 rounded text-[13px] text-green-200 transform transition-all duration-300 hover:scale-110"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
+                  <SkillItem key={skill} tech={skill} index={index}>
                     {skill}
-                  </span>
+                  </SkillItem>
                 ))}
               </div>
             </div>
@@ -97,21 +92,17 @@ export default function Skills() {
 
           {/* Tools & Testing */}
           <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-indigo-600/20 rounded-xl border border-purple-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-purple-400/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/50 rounded-xl border border-gray-400/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-gray-500/50"></div>
             <div className="relative p-4 rounded-xl text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+              <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
                 <IoIosSettings size={28} className="text-white" />
               </div>
-              <h3 className="text-white font-bold mb-2 text-lg">Tools & Testing</h3>
+              <h3 className="text-gray-800 font-bold mb-2 text-lg">Tools & Testing</h3>
               <div className="flex flex-wrap gap-1 justify-center">
                 {toolsAndTesting.map((skill, index) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 bg-purple-600/30 border border-purple-500/50 rounded text-[13px] text-purple-200 transform transition-all duration-300 hover:scale-110"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
+                  <SkillItem key={skill} tech={skill} index={index}>
                     {skill}
-                  </span>
+                  </SkillItem>
                 ))}
               </div>
             </div>
@@ -119,21 +110,17 @@ export default function Skills() {
 
           {/* Other Skills */}
           <div className="group relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-600/20 to-gray-500/20 rounded-xl border border-gray-500/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-gray-400/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-200/50 to-gray-300/50 rounded-xl border border-gray-400/30 transform transition-all duration-300 group-hover:scale-105 group-hover:border-gray-500/50"></div>
             <div className="relative p-4 rounded-xl text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-500 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
+              <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-xl mx-auto mb-3 flex items-center justify-center transform transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
                 <FaTools size={25} className="text-white" />
               </div>
-              <h3 className="text-white font-bold mb-2 text-lg">Other</h3>
+              <h3 className="text-gray-800 font-bold mb-2 text-lg">Other</h3>
               <div className="flex flex-wrap gap-1 justify-center">
                 {otherSkills.map((skill, index) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 bg-gray-600/30 border border-gray-500/50 rounded text-[13px] text-gray-200 transform transition-all duration-300 hover:scale-110"
-                    style={{ animationDelay: `${index * 100}ms` }}
-                  >
+                  <SkillItem key={skill} tech={skill} index={index}>
                     {skill}
-                  </span>
+                  </SkillItem>
                 ))}
               </div>
             </div>

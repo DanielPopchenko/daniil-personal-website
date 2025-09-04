@@ -1,20 +1,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
-    fontFamily: {
-      satoshi: ['Satoshi', 'sans-serif'],
-      inter: ['Inter', 'sans-serif'],
-      bricolage: ['Bricolage Grotesque', 'sans-serif'],
-      dm: ['DM Sans', 'sans-serif'],
-      archivo: ['Archivo', 'sans-serif'],
-      manrope: ['Manrope', 'sans-serif'],
-      marck: ['Marck Script', 'sans-serif'],
-      poppins: ['Poppins', 'Poppins Placeholder', 'sans-serif'],
-    },
     colors: {
       current: 'currentColor',
       transparent: 'transparent',
@@ -198,5 +189,6 @@ export default {
       ...defaultTheme.screens,
     },
   },
+
   plugins: [],
 };
