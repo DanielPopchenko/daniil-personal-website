@@ -117,7 +117,7 @@ export default function Nav() {
           ))}
 
           <div
-            className={`mt-10 flex flex-col gap-3 font-mono text-[13px] transition-all duration-500 ease-out ${
+            className={`mt-10 flex flex-col gap-3 font-mono text-[0.8125rem] transition-all duration-500 ease-out ${
               open ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
             }`}
             style={{ transitionDelay: `${open ? 140 + links.length * 70 : 0}ms` }}

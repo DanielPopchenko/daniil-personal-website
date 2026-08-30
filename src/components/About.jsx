@@ -31,7 +31,7 @@ export default function About() {
         {notes.map(({ label, body }, index) => (
           <Reveal key={label} delay={index * 90} className=" pt-5">
             <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent">{label}</h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-muted sm:text-sm">{body}</p>
+            <p className="mt-3 text-[0.9375rem] leading-relaxed text-muted sm:text-sm">{body}</p>
           </Reveal>
         ))}
       </div>

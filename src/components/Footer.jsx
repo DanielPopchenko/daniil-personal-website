@@ -2,7 +2,7 @@ import { EMAIL, openEmail, socials } from '../data/profile';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line py-10 font-mono text-[13px] text-faint sm:text-xs">
+    <footer className="border-t border-line py-10 font-mono text-[0.8125rem] text-faint sm:text-xs">
       <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="uppercase tracking-[0.16em]">Get in touch</p>

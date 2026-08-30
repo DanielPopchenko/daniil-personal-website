@@ -73,10 +73,10 @@ export default function Skills() {
             delay={index * 70}
             className="grid gap-3 border-t border-line py-6 first:border-t-0 first:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-10"
           >
-            <dt className="font-mono text-[13px] uppercase tracking-[0.16em] text-faint sm:text-xs">
+            <dt className="font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-faint sm:text-xs">
               {label}
             </dt>
-            <dd className="flex flex-wrap gap-x-5 gap-y-2 text-base text-muted sm:text-[15px]">
+            <dd className="flex flex-wrap gap-x-5 gap-y-2 text-base text-muted sm:text-[0.9375rem]">
               {items.map((item) => (
                 <span key={item} className="transition-colors duration-300 hover:text-ink">
                   {item}

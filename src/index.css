@@ -23,6 +23,10 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Everything below is sized in rem, so this scales type, spacing and the
+       content column together on large monitors. Stays at the user's base size
+       below ~1024px so phone and laptop layouts are untouched. */
+    font-size: clamp(1rem, 0.854rem + 0.228vw, 1.25rem);
   }
 
   body {

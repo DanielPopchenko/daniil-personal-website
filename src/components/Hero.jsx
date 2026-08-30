@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section id="top" className="pt-32 pb-20 sm:pt-40 sm:pb-28">
       <p
-        className="rise font-mono text-[13px] uppercase tracking-[0.16em] text-faint sm:text-xs sm:tracking-[0.22em]"
+        className="rise font-mono text-[0.8125rem] uppercase tracking-[0.16em] text-faint sm:text-xs sm:tracking-[0.22em]"
         style={{ animationDelay: '80ms' }}
       >
         New York City.
@@ -27,8 +27,8 @@ export default function Hero() {
       </p>
 
       <div
-        className="rise mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[13px] sm:text-xs"
-        style={{ animationDelay: '620ms' }}
+        className="rise mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[0.8125rem] sm:text-xs"
+        style={{ animationDelay: '360ms' }}
       >
         {socials.map(({ label, href }) => (
           <a
@@ -52,14 +52,14 @@ export default function Hero() {
 
       <div
         className="rule-in mt-12 h-px w-full bg-line"
-        style={{ animationDelay: '360ms' }}
+        style={{ animationDelay: '460ms' }}
         aria-hidden="true"
       />
 
       <div className="max-w-xl">
         <p
           className="rise mt-10 text-base leading-relaxed text-muted"
-          style={{ animationDelay: '460ms' }}
+          style={{ animationDelay: '560ms' }}
         >
           I build and ship production web applications, three years of it so far. Mostly frontend,
           with enough backend, mobile and QA to be useful when something breaks. I like taking a
@@ -68,8 +68,8 @@ export default function Hero() {
         </p>
 
         <p
-          className="rise mt-6 flex items-center gap-3 text-[15px] text-ink sm:text-sm"
-          style={{ animationDelay: '540ms' }}
+          className="rise mt-6 flex items-center gap-3 text-[0.9375rem] text-ink sm:text-sm"
+          style={{ animationDelay: '640ms' }}
         >
           <span
             className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"

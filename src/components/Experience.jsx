@@ -10,7 +10,7 @@ function Role({ job, delay }) {
       delay={delay}
       className="group grid gap-6 border-t border-line py-12 first:border-t-0 first:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-10"
     >
-      <div className="font-mono text-[13px] text-faint sm:text-xs">
+      <div className="font-mono text-[0.8125rem] text-faint sm:text-xs">
         <p className="transition-colors duration-500 group-hover:text-ink">{job.period}</p>
         <p className="mt-1.5">{job.location}</p>
         {job.current && (
@@ -27,9 +27,9 @@ function Role({ job, delay }) {
 
       <div>
         <h3 className="text-2xl font-medium tracking-tight">{job.company}</h3>
-        <p className="mt-1 text-[15px] text-muted sm:text-sm">{job.role}</p>
+        <p className="mt-1 text-[0.9375rem] text-muted sm:text-sm">{job.role}</p>
 
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-[15px]">
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted sm:text-[0.9375rem]">
           {job.summary}
         </p>
 
@@ -37,7 +37,7 @@ function Role({ job, delay }) {
           {job.points.map((point) => (
             <li
               key={point}
-              className="relative pl-6 text-base leading-relaxed text-muted before:absolute before:left-0 before:top-[0.72em] before:h-px before:w-3 before:bg-faint sm:text-[15px]"
+              className="relative pl-6 text-base leading-relaxed text-muted before:absolute before:left-0 before:top-[0.72em] before:h-px before:w-3 before:bg-faint sm:text-[0.9375rem]"
             >
               {point}
             </li>

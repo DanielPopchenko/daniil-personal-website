@@ -27,14 +27,14 @@ export default function Education() {
           delay={index * 80}
           className="grid gap-4 border-t border-line py-8 first:border-t-0 first:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-10"
         >
-          <div className="font-mono text-[13px] text-faint sm:text-xs">
+          <div className="font-mono text-[0.8125rem] text-faint sm:text-xs">
             <p>{period}</p>
             <p className="mt-1.5">{location}</p>
           </div>
           <div>
             <h3 className="text-xl font-medium tracking-tight sm:text-lg">{school}</h3>
-            <p className="mt-1 text-[15px] text-muted sm:text-sm">{degree}</p>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-[15px]">
+            <p className="mt-1 text-[0.9375rem] text-muted sm:text-sm">{degree}</p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-[0.9375rem]">
               {body}
             </p>
           </div>
