@@ -161,10 +161,16 @@ export default function Nav() {
           <a
             href="#top"
             onClick={() => setOpen(false)}
-            className="link font-mono text-sm font-medium text-ink"
+            className="group flex items-center gap-2.5 font-mono text-sm font-medium text-ink"
             aria-label="Back to top"
           >
-            daniil.popchenko
+            <img
+              src="/dp-logo.svg"
+              alt=""
+              aria-hidden="true"
+              className="h-7 w-7 rounded-md"
+            />
+            <span className="link">daniil.popchenko</span>
           </a>
 
           <ul className="hidden items-center gap-7 sm:flex">
