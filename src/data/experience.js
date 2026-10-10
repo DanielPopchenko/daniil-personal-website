@@ -1,22 +1,20 @@
 const experience = [
   {
     company: 'Superconnector',
-    role: 'Founding Frontend Engineer',
-    period: 'Oct 2025 - Current',
+    role: 'Full-Stack Engineer',
+    period: 'Oct 2025 - Oct 2026',
     location: 'New York',
-    current: true,
     summary:
-      'Lead frontend development as the founding Frontend Engineer, owning the application’s frontend architecture, UI/UX, and design system. Operate at the intersection of engineering and product, translating business needs and user feedback into product requirements, technical decisions, and production-ready experiences.',
+      'Owned product features end-to-end, turning loosely defined business needs and user feedback into production-ready experiences across frontend, backend integration, QA, deployment, and post-launch iteration.',
     points: [
-      'Joined as the second frontend engineer and now the only one on the team. Daily active users have gone from 500 to 5,000+ since I started, and it is still climbing.',
-      'Own the full lifecycle from idea to production: define the requirements with founders and stakeholders, design the flows, build the frontend, integrate the APIs, deploy the release and keep an eye on it afterwards.',
-      'Build with TypeScript, React, Next.js and Tailwind against REST APIs and .NET backend services.',
-      'Define data contracts with the backend team and tune how the client talks to them, so features land without surprises.',
-      'Use Claude Code and Cursor daily: real context, iterative prompt cycles, then the same code review and testing as anything I wrote by hand.',
-      'Startup pace, so I trade speed against quality on purpose and re-cut things as feedback comes in.',
+      'Led frontend engineering as the sole frontend engineer, owning architecture, technical direction, responsive UI, design systems, reusable components, and UI polish.',
+      'Collaborated with backend engineers on API contracts, data flows, performance, reliability, and technical tradeoffs.',
+      'Used PostHog sessions and product analytics to identify friction in onboarding and lead-creation flows, helping drive 4–5x growth in daily active users and stronger conversion and revenue performance.',
+      'Used Claude Code, Codex, and Cursor for codebase exploration, prototyping, implementation, debugging, test generation, and review, validating changes through testing, linting, and hands-on code review.',
+      'Worked independently in a high-ambiguity startup environment, balancing speed, UX quality, performance, maintainability, and business value while collaborating directly with founders, product stakeholders, and backend engineers.',
     ],
     stack: ['TypeScript', 'React', 'Next.js', 'Tailwind', 'REST APIs', '.NET'],
-    tools: ['Claude Code', 'Cursor', 'Git', 'Code Reviews', 'CI/CD'],
+    tools: ['PostHog', 'Claude Code', 'Codex', 'Cursor', 'Git', 'Code Reviews', 'CI/CD'],
   },
   {
     company: 'Volta',

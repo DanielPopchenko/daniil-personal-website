@@ -23,7 +23,7 @@ export default function Hero() {
         className="rise mt-6 font-display text-[clamp(1.75rem,5.5vw,3rem)] leading-none tracking-[-0.01em] text-accent italic"
         style={{ animationDelay: '260ms' }}
       >
-        Fullstack Engineer
+        Full-Stack Engineer
       </p>
 
       <div
@@ -76,7 +76,7 @@ export default function Hero() {
             style={{ animation: 'breathe 2.8s ease-in-out infinite' }}
             aria-hidden="true"
           />
-          Founding Frontend Engineer at Superconnector
+          Full-Stack Engineer · Superconnector, 2025–2026
         </p>
       </div>
     </section>

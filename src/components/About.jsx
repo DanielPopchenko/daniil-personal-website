@@ -4,7 +4,7 @@ import Section from './Section';
 const notes = [
   {
     label: 'How I work',
-    body: 'I like owning the process. Iterating through the process, agreeing what to build, designing, implementing, wiring up the API, writing the tests, shipping it, then checking it behaves in production. Right now I am a Lead Frontend Engineer at a New York startup, so ownership is something I live with every day. And I enjoy it!',
+    body: 'I like owning the process: agreeing what to build, designing, implementing, wiring up the API, writing the tests, shipping it, then checking how it behaves in production. At Superconnector, I worked independently across product and engineering in a high-ambiguity startup environment.',
   },
   {
     label: 'AI tooling',
