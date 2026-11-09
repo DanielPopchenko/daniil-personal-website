@@ -4,6 +4,10 @@ const experience = [
     role: 'Full-Stack Engineer',
     period: 'Oct 2025 - Oct 2026',
     location: 'New York',
+    metrics: [
+      { display: '4–5x', label: 'Growth in daily active users' },
+      { display: 'Solo', label: 'Frontend engineer, owning architecture to polish' },
+    ],
     summary:
       'Owned product features end-to-end, turning loosely defined business needs and user feedback into production-ready experiences across frontend, backend integration, QA, deployment, and post-launch iteration.',
     points: [
@@ -21,6 +25,11 @@ const experience = [
     role: 'Fullstack Software Engineer',
     period: 'Sep 2024 - Sep 2025',
     location: 'New York',
+    metrics: [
+      { value: 2000, suffix: '+', label: 'Daily active users, up from 5–10' },
+      { value: 800, suffix: '+', label: 'Hard-coded strings localized' },
+      { value: 70, prefix: '−', suffix: '%', label: 'Runtime errors after leading QA' },
+    ],
     summary:
       'A two-sided health platform for universities: a student app on iOS and Android, a web platform for admins, Node services behind both. Frontend was my depth, but I was pulled into backend, mobile and QA whenever it was needed.',
     points: [
@@ -49,6 +58,14 @@ const experience = [
     role: 'Frontend Engineer',
     period: 'Nov 2023 - Sep 2024',
     location: 'Tampa',
+    metrics: [
+      {
+        value: 50,
+        prefix: '~',
+        suffix: '%',
+        label: 'Efficiency gain from testing and tech-debt work',
+      },
+    ],
     summary:
       'Built and shipped features across several web and mobile products for international clients.',
     points: [

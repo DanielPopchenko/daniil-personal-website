@@ -25,10 +25,10 @@ export default function Education() {
         <Reveal
           key={school}
           delay={index * 80}
-          className="grid gap-4 border-t border-line py-8 first:border-t-0 first:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-10"
+          className="sweep group grid gap-4 border-t border-line py-8 first:border-t-0 first:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-10"
         >
           <div className="font-mono text-[0.8125rem] text-faint sm:text-xs">
-            <p>{period}</p>
+            <p className="transition-colors duration-500 group-hover:text-ink">{period}</p>
             <p className="mt-1.5">{location}</p>
           </div>
           <div>

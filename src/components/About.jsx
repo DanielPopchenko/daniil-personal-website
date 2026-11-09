@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import ScrollWords from './ScrollWords';
 import Section from './Section';
 
 const notes = [
@@ -19,17 +20,14 @@ const notes = [
 export default function About() {
   return (
     <Section id="about" index="01" title="About">
-      <div className="max-w-2xl space-y-6 text-base leading-relaxed text-muted">
-        <Reveal as="p" delay={80}>
-          I don’t limit myself to the boundaries of an engineering title. I move across engineering,
-          product, design, and QA, taking ownership wherever the product needs it and turning
-          problems into shipped solutions.
-        </Reveal>
-      </div>
+      <ScrollWords
+        className="max-w-3xl text-[clamp(1.5rem,3.4vw,2.25rem)] font-medium leading-[1.25] tracking-tight text-ink"
+        text="I don’t limit myself to the boundaries of an engineering title. I move across engineering, product, design, and QA, taking ownership wherever the product needs it and turning problems into shipped solutions."
+      />
 
-      <div className="mt-16 grid gap-x-8 gap-y-10 sm:grid-cols-3">
+      <div className="mt-20 grid gap-x-8 gap-y-10 sm:grid-cols-3">
         {notes.map(({ label, body }, index) => (
-          <Reveal key={label} delay={index * 90} className=" pt-5">
+          <Reveal key={label} delay={index * 110} className="pt-5">
             <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-accent">{label}</h3>
             <p className="mt-3 text-[0.9375rem] leading-relaxed text-muted sm:text-sm">{body}</p>
           </Reveal>

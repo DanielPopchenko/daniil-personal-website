@@ -1,43 +1,37 @@
 import { useEffect, useState } from 'react';
+import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { EMAIL, openEmail, socials } from '../data/profile';
+import { DURATION, EASE_OUT } from '../lib/motion';
+import { isProgrammaticScroll, lockScroll, scrollToTarget } from '../lib/scroll';
 
 const links = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
   { id: 'skills', label: 'Skills' },
   { id: 'education', label: 'Education' },
-  // { id: 'contact', label: 'Contact' },
+  { id: 'contact', label: 'Contact' },
 ];
 
 export default function Nav() {
-  const [progress, setProgress] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [active, setActive] = useState('');
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    let frame = 0;
+  const { scrollY, scrollYProgress } = useScroll();
 
-    const update = () => {
-      frame = 0;
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(scrollable > 0 ? window.scrollY / scrollable : 0);
-      setScrolled(window.scrollY > 24);
-    };
-
-    const onScroll = () => {
-      if (!frame) frame = window.requestAnimationFrame(update);
-    };
-
-    update();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
+  // Tuck the bar away while reading downwards, bring it back on any upward intent.
+  // Scrolls the visitor triggered from the nav itself never hide it.
+  useMotionValueEvent(scrollY, 'change', (current) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    setScrolled(current > 24);
+    if (isProgrammaticScroll()) {
+      setHidden(false);
+      return;
+    }
+    if (Math.abs(current - previous) < 4) return;
+    setHidden(current > previous && current > 240);
+  });
 
   useEffect(() => {
     const sections = links
@@ -64,6 +58,7 @@ export default function Nav() {
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+    lockScroll(true);
 
     const onKeyDown = (event) => {
       if (event.key === 'Escape') setOpen(false);
@@ -72,6 +67,7 @@ export default function Nav() {
     window.addEventListener('keydown', onKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
+      lockScroll(false);
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [open]);
@@ -85,14 +81,15 @@ export default function Nav() {
     return () => window.removeEventListener('resize', onResize);
   }, []);
 
+  const go = (target) => (event) => {
+    event.preventDefault();
+    setOpen(false);
+    lockScroll(false);
+    scrollToTarget(target);
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div
-        className="h-px origin-left bg-accent"
-        style={{ transform: `scaleX(${progress})` }}
-        aria-hidden="true"
-      />
-
       <div
         id="mobile-menu"
         aria-hidden={!open}
@@ -105,11 +102,12 @@ export default function Nav() {
             <a
               key={id}
               href={`#${id}`}
-              onClick={() => setOpen(false)}
-              className={`flex items-baseline gap-4 border-b border-line py-5 transition-all duration-500 ease-out ${
-                open ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+              onClick={go(id)}
+              tabIndex={open ? undefined : -1}
+              className={`flex items-baseline gap-4 border-b border-line py-5 transition-all duration-700 ease-out-expo ${
+                open ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
               }`}
-              style={{ transitionDelay: `${open ? 140 + index * 70 : 0}ms` }}
+              style={{ transitionDelay: `${open ? 120 + index * 60 : 0}ms` }}
             >
               <span className="font-mono text-xs text-accent">{`0${index + 1}`}</span>
               <span className="font-display text-4xl leading-none">{label}</span>
@@ -117,13 +115,14 @@ export default function Nav() {
           ))}
 
           <div
-            className={`mt-10 flex flex-col gap-3 font-mono text-[0.8125rem] transition-all duration-500 ease-out ${
-              open ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
+            className={`mt-10 flex flex-col gap-3 font-mono text-[0.8125rem] transition-all duration-700 ease-out-expo ${
+              open ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}
-            style={{ transitionDelay: `${open ? 140 + links.length * 70 : 0}ms` }}
+            style={{ transitionDelay: `${open ? 120 + links.length * 60 : 0}ms` }}
           >
             <button
               type="button"
+              tabIndex={open ? undefined : -1}
               onClick={() => {
                 setOpen(false);
                 openEmail();
@@ -139,6 +138,7 @@ export default function Nav() {
                   href={href}
                   target="_blank"
                   rel="noreferrer"
+                  tabIndex={open ? undefined : -1}
                   onClick={() => setOpen(false)}
                   className="link text-muted"
                 >
@@ -150,65 +150,89 @@ export default function Nav() {
         </div>
       </div>
 
-      <div
-        className={`relative transition-colors duration-500 ${
-          scrolled || open
-            ? 'border-b border-line bg-paper/80 backdrop-blur-md'
-            : 'border-b border-transparent'
-        }`}
+      <motion.div
+        animate={{ y: hidden && !open ? '-100%' : '0%' }}
+        transition={{ duration: DURATION.fast, ease: EASE_OUT }}
       >
-        <nav className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4 sm:px-8">
-          <a
-            href="#top"
-            onClick={() => setOpen(false)}
-            className="group flex items-center gap-2.5 font-mono text-sm font-medium text-ink"
-            aria-label="Back to top"
-          >
-            <img
-              src="/dp-logo.svg"
-              alt=""
-              aria-hidden="true"
-              className="h-7 w-7 rounded-md"
-            />
-            <span className="link">daniil.popchenko</span>
-          </a>
+        <motion.div
+          className="h-px origin-left bg-accent"
+          style={{ scaleX: scrollYProgress }}
+          aria-hidden="true"
+        />
 
-          <ul className="hidden items-center gap-7 sm:flex">
-            {links.map(({ id, label }) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  className={`link font-mono text-xs transition-colors duration-300 ${
-                    active === id ? 'text-ink' : 'text-faint hover:text-ink'
-                  }`}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <button
-            type="button"
-            onClick={() => setOpen((value) => !value)}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            className="relative -mr-1 h-6 w-6 cursor-pointer sm:hidden"
+        <div
+          className={`relative transition-colors duration-500 ${
+            scrolled || open
+              ? 'border-b border-line bg-paper/80 backdrop-blur-md'
+              : 'border-b border-transparent'
+          }`}
+        >
+          <nav
+            className="drop mx-auto flex max-w-4xl items-center justify-between px-6 py-4 sm:px-8"
+            style={{ animationDelay: '240ms' }}
           >
-            <span
-              className={`absolute left-0 block h-px w-6 bg-ink transition-transform duration-500 ease-out ${
-                open ? 'top-1/2 rotate-45' : 'top-[0.5rem]'
-              }`}
-            />
-            <span
-              className={`absolute left-0 block h-px w-6 bg-ink transition-transform duration-500 ease-out ${
-                open ? 'top-1/2 -rotate-45' : 'top-[0.9rem]'
-              }`}
-            />
-          </button>
-        </nav>
-      </div>
+            {/* <a
+              href="#top"
+              onClick={go('top')}
+              className="group flex items-center gap-2.5 font-mono text-sm font-medium text-ink"
+              aria-label="Back to top"
+            >
+              <img
+                src="/dp-logo.svg"
+                alt=""
+                aria-hidden="true"
+                className="h-7 w-7 rounded-md transition-transform duration-700 ease-out-expo group-hover:-rotate-6 group-hover:scale-105"
+              />
+              <span className="link">daniil.popchenko</span>
+            </a> */}
+
+            <ul className="hidden items-center gap-7 sm:flex">
+              {links.map(({ id, label }) => (
+                <li key={id} className="relative">
+                  <a
+                    href={`#${id}`}
+                    onClick={go(id)}
+                    aria-current={active === id ? 'true' : undefined}
+                    className={`link font-mono text-xs transition-colors duration-300 ${
+                      active === id ? 'text-ink' : 'text-faint hover:text-ink'
+                    }`}
+                  >
+                    {label}
+                  </a>
+                  {active === id && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute -bottom-2.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent"
+                      transition={{ type: 'spring', stiffness: 420, damping: 34 }}
+                      aria-hidden="true"
+                    />
+                  )}
+                </li>
+              ))}
+            </ul>
+
+            <button
+              type="button"
+              onClick={() => setOpen((value) => !value)}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              className="relative -mr-1 h-6 w-6 cursor-pointer sm:hidden"
+            >
+              <span
+                className={`absolute left-0 block h-px w-6 bg-ink transition-transform duration-500 ease-out ${
+                  open ? 'top-1/2 rotate-45' : 'top-[0.5rem]'
+                }`}
+              />
+              <span
+                className={`absolute left-0 block h-px w-6 bg-ink transition-transform duration-500 ease-out ${
+                  open ? 'top-1/2 -rotate-45' : 'top-[0.9rem]'
+                }`}
+              />
+            </button>
+          </nav>
+        </div>
+      </motion.div>
     </header>
   );
 }
