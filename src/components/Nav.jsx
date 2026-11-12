@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { EMAIL, openEmail, socials } from '../data/profile';
-import { DURATION, EASE_OUT } from '../lib/motion';
+import { DURATION, EASE_OUT, INTRO } from '../lib/motion';
 import { isProgrammaticScroll, lockScroll, scrollToTarget } from '../lib/scroll';
 
 const links = [
@@ -169,7 +169,7 @@ export default function Nav() {
         >
           <nav
             className="drop mx-auto flex max-w-4xl items-center justify-between px-6 py-4 sm:px-8"
-            style={{ animationDelay: '240ms' }}
+            style={{ animationDelay: `${INTRO.nav}ms` }}
           >
             {/* <a
               href="#top"

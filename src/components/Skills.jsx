@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { categories, languages, practices, skills } from '../data/skills';
+import usePointerGlow from '../hooks/usePointerGlow';
 import { DURATION, EASE_OUT, VIEWPORT } from '../lib/motion';
 import Section from './Section';
 
@@ -88,8 +89,7 @@ function SkillTile({ skill, delay, state, dimmed }) {
 export default function Skills() {
   const [active, setActive] = useState('all');
   const [settled, setSettled] = useState(false);
-  const gridRef = useRef(null);
-  const frame = useRef(0);
+  const [gridRef, onPointerMove] = usePointerGlow('.skill-tile');
   const inView = useInView(gridRef, VIEWPORT);
 
   // Only the first entrance cascades; later highlight changes respond immediately.
@@ -103,20 +103,6 @@ export default function Skills() {
     skills.filter((skill) => matches(active, skill.category)).length +
     practices.filter((item) => matches(active, item.category)).length;
   const total = skills.length + practices.length;
-
-  // Every tile reads the same pointer, so the glow spills across neighbours like one light source.
-  const onPointerMove = (event) => {
-    if (event.pointerType !== 'mouse' || frame.current) return;
-    const { clientX, clientY } = event;
-    frame.current = window.requestAnimationFrame(() => {
-      frame.current = 0;
-      gridRef.current?.querySelectorAll('.skill-tile').forEach((node) => {
-        const box = node.getBoundingClientRect();
-        node.style.setProperty('--mx', `${clientX - box.left}px`);
-        node.style.setProperty('--my', `${clientY - box.top}px`);
-      });
-    });
-  };
 
   return (
     <Section id="skills" index="03" title="Skills">

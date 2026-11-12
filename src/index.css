@@ -151,7 +151,9 @@
 
   /* Skill grid: one pointer-driven light that tints tile borders and faces. */
   .skill-face::before,
-  .skill-face::after {
+  .skill-face::after,
+  .glow-card::before,
+  .glow-card::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -161,7 +163,8 @@
     transition: opacity 0.5s var(--ease-out-expo);
   }
 
-  .skill-face::before {
+  .skill-face::before,
+  .glow-card::before {
     z-index: 1;
     padding: 1px;
     background: radial-gradient(
@@ -177,7 +180,8 @@
     mask-composite: exclude;
   }
 
-  .skill-face::after {
+  .skill-face::after,
+  .glow-card::after {
     background: radial-gradient(
       140px circle at var(--mx, 50%) var(--my, 50%),
       color-mix(in srgb, var(--color-accent) 12%, transparent),
@@ -187,7 +191,9 @@
 
   @media (hover: hover) {
     .skill-grid:hover .skill-face::before,
-    .skill-grid:hover .skill-face::after {
+    .skill-grid:hover .skill-face::after,
+    .glow-grid:hover .glow-card::before,
+    .glow-grid:hover .glow-card::after {
       opacity: 1;
     }
   }
@@ -232,7 +238,7 @@
     transition: transform 0.9s var(--ease-out-expo);
   }
 
-  .sweep:first-child::before {
+  .sweep:first-of-type::before {
     display: none;
   }
 
@@ -242,6 +248,17 @@
       transform-origin: left;
     }
   }
+}
+
+/* Italic glyphs lean past their own box, so each letter's clip window in the greeting gets
+   extra room on both sides. The matching negative margin keeps the spacing unchanged. */
+.greeting .split-char-mask {
+  padding-inline: 0.15em;
+  margin-inline: -0.15em;
+}
+
+.greeting .split-parent {
+  padding-right: 0.15em;
 }
 
 @keyframes rise {

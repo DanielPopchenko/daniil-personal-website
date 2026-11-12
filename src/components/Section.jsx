@@ -25,14 +25,6 @@ export default function Section({ id, index, title, children }) {
             encryptedClassName="text-faint"
           />
         </h2>
-        <motion.span
-          className="h-px flex-1 origin-left bg-line"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={VIEWPORT}
-          transition={{ duration: DURATION.slow, ease: EASE_OUT, delay: 0.1 }}
-          aria-hidden="true"
-        />
       </div>
       {children}
     </section>

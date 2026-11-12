@@ -52,11 +52,11 @@ export const skills = [
   { name: 'Node.js', icon: nodejs, category: 'stack' },
   { name: 'Express', icon: express, category: 'stack', invert: true },
   { name: 'Nest.js', icon: nestjs, category: 'stack' },
-  { name: '.NET', icon: dotnet, category: 'stack' },
   { name: 'Prisma', icon: prisma, category: 'stack', invert: true },
   { name: 'PostgreSQL', icon: postgresql, category: 'stack' },
   { name: 'MySQL', icon: mysql, category: 'stack' },
   { name: 'GraphQL', icon: graphql, category: 'stack' },
+  { name: '.NET', icon: dotnet, category: 'stack' },
   { name: 'Tailwind', icon: tailwind, category: 'stack' },
   { name: 'SCSS', icon: sass, category: 'stack' },
   { name: 'CSS3', icon: css3, category: 'stack' },
@@ -97,4 +97,8 @@ export const practices = [
   { name: 'Manual QA', category: 'testing' },
 ];
 
-export const languages = ['English (B2)', 'Ukrainian (native)', 'Latvian (A2)'];
+export const languages = [
+  'Ukrainian (native)',
+  'English (professional)',
+  'Latvian (A2, still levelling up)',
+];

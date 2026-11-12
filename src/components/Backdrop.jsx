@@ -3,8 +3,18 @@ import { motion, useInView } from 'motion/react';
 import { DURATION, EASE_OUT } from '../lib/motion';
 
 const scenes = {
-  slats: lazy(() => import('@/components/MicroSlats')),
   waves: lazy(() => import('@/components/PatternWaves')),
+};
+
+// One look per scene, so every section that uses it reads as the same surface.
+const looks = {
+  waves: {
+    preset: 'silk',
+    color: '#ea580c',
+    backgroundColor: '#0c0907',
+    fade: 'none',
+    cursorSize: 70,
+  },
 };
 
 const supportsWebGL = () => {
@@ -38,7 +48,7 @@ export default function Backdrop({ scene, mask, className = '', ...props }) {
             animate={{ opacity: 1 }}
             transition={{ duration: DURATION.slow, ease: EASE_OUT }}
           >
-            <Scene {...props} />
+            <Scene {...looks[scene]} {...props} />
           </motion.div>
         </Suspense>
       )}

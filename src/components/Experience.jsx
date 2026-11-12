@@ -1,6 +1,7 @@
-import { motion } from 'motion/react';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import experience from '../data/experience';
-import { fadeUp, sequence, VIEWPORT } from '../lib/motion';
+import { EASE_OUT, fadeUp, sequence, VIEWPORT } from '../lib/motion';
 import CountUp from './CountUp';
 import Section from './Section';
 import Tag from './Tag';
@@ -32,7 +33,7 @@ function Role({ job, index, total }) {
       initial="hidden"
       whileInView="shown"
       viewport={VIEWPORT}
-      className="sweep group grid gap-6 border-t border-line py-12 first:border-t-0 first:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-10"
+      className="sweep group grid gap-6 border-t border-line py-12 first-of-type:border-t-0 first-of-type:pt-0 sm:grid-cols-[9.5rem_1fr] sm:gap-10"
     >
       <motion.div
         variants={fadeUp}
@@ -55,7 +56,15 @@ function Role({ job, index, total }) {
         )}
       </motion.div>
 
-      <div>
+      <div className="relative">
+        <motion.span
+          variants={{
+            hidden: { scale: 0, opacity: 0 },
+            shown: { scale: 1, opacity: 1, transition: { duration: 0.6, ease: EASE_OUT } },
+          }}
+          className="absolute top-2.5 -left-5 hidden h-2.5 w-2.5 -translate-x-1/2 rounded-full border border-accent bg-paper shadow-[0_0_14px_var(--color-accent)] sm:block"
+          aria-hidden="true"
+        />
         <motion.div variants={fadeUp}>
           <h3 className="text-2xl font-medium tracking-tight">{job.company}</h3>
           <p className="mt-1 text-[0.9375rem] text-muted sm:text-sm">{job.role}</p>
@@ -109,10 +118,31 @@ function Role({ job, index, total }) {
   );
 }
 
+// A hairline between the dates and the roles that fills in as the reader moves down the timeline.
+function Rail({ target }) {
+  const { scrollYProgress } = useScroll({ target, offset: ['start 0.6', 'end 0.6'] });
+  const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  return (
+    <div
+      className="pointer-events-none absolute top-3 bottom-12 left-[10.75rem] hidden w-px -translate-x-1/2 bg-line sm:block"
+      aria-hidden="true"
+    >
+      <motion.div
+        className="h-full w-full origin-top bg-gradient-to-b from-accent to-accent-2"
+        style={{ scaleY }}
+      />
+    </div>
+  );
+}
+
 export default function Experience() {
+  const listRef = useRef(null);
+
   return (
     <Section id="experience" index="02" title="Experience">
-      <div>
+      <div ref={listRef} className="relative">
+        <Rail target={listRef} />
         {experience.map((job, index) => (
           <Role key={job.company} job={job} index={index} total={experience.length} />
         ))}

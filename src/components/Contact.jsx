@@ -59,16 +59,11 @@ export default function Contact() {
         scene="waves"
         mask="linear-gradient(to bottom, transparent, #000 30%, #000 70%, transparent)"
         className="opacity-45"
-        preset="silk"
-        color="#ea580c"
-        backgroundColor="#0c0907"
-        fade="none"
-        cursorSize={70}
       />
 
       <div className="max-w-2xl">
         <SplitText
-          text="Looking for someone to own your frontend end to end?"
+          text="Looking for my next team."
           tag="p"
           splitType="words"
           mask
@@ -81,8 +76,8 @@ export default function Contact() {
           className="text-2xl font-medium leading-snug tracking-tight sm:text-3xl"
         />
         <Reveal as="p" delay={200} className="mt-5 text-base leading-relaxed text-muted">
-          I am in Brooklyn and open to relocation. Email is the fastest way to reach me, and I do
-          reply.
+          Full-time, in New York or wherever the team plays. Email or LinkedIn is the quickest way
+          to reach me, looking forward to connecting!
         </Reveal>
       </div>
 

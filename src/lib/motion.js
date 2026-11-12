@@ -10,6 +10,20 @@ export const DURATION = {
 
 export const STAGGER = 0.08;
 
+// The page intro as one timeline, in ms from the moment the fonts are ready.
+// "Hi, I'm" and the name rise as one wave of letters, and everything else follows it down the page.
+export const INTRO = {
+  greeting: 300,
+  nav: 740,
+  eyebrow: 800,
+  role: 920,
+  links: 1120,
+  rule: 1180,
+  body: 1280,
+  status: 1360,
+  cue: 1600,
+};
+
 export const VIEWPORT = { once: true, margin: '0px 0px -12% 0px' };
 
 export const fadeUp = {
