@@ -29,7 +29,7 @@ export default function About() {
     <Section id="about" index="01" title="About">
       <ScrollWords
         className="max-w-3xl text-[clamp(1.5rem,3.4vw,2.25rem)] font-medium leading-[1.25] tracking-tight text-ink"
-        text="I taught myself to code and never really stopped. Now I work across the whole stack, pick up whatever the job needs fast, and lose sleep over a button that’s two pixels off."
+        text="I taught myself to code and never really stopped. Now I work across the whole stack at fast-moving startups, straight with founders and clients, and I’m picky about the small UI and UX details that make a product feel right."
       />
 
       <div
