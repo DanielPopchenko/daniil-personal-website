@@ -4,7 +4,7 @@ import Section from './Section';
 const schools = [
   {
     school: 'IU International University of Applied Sciences',
-    location: 'Berlin',
+    location: 'Online program',
     period: 'Jun 2024 – Jun 2027',
     degree: "Bachelor's, Computer Science (in progress)",
     body: 'Requirements engineering, system design, OOP, UML and code quality standards, applied to group projects rather than just exams. Mostly in JavaScript, TypeScript, React, Java, Python, MySQL and AWS.',
